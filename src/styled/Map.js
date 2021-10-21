@@ -3,13 +3,8 @@ import GoogleMapReact from 'google-map-react';
 import styled from 'styled-components';
 
 const MapWrapper = styled.section`
-  height:100vh;
-            @media(min-width:768px){
-            height:660px;
-        }
-            @media(min-width:1200px){
-            height:100vh;
-        }
+  height:50vh;
+         
 `;
 
 const AnyReactComponent = ({ img}) => <img src={img} style={{height: 30}} alt="" />;
@@ -20,7 +15,7 @@ class SimpleMap extends Component {
       lat: -17.767120, 
       lng: 31.007940, 
     },
-    zoom: 17
+    zoom: 20
   };
 
   render() {

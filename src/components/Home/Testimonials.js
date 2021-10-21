@@ -7,11 +7,34 @@ import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import Testimony from "../../styled/Testimony";
 
 const TestWrapper = styled.section`
-  >p,h2{
-    padding:0 5%;
+  @media (min-width: 768px) {
+    padding: 5% 0;
+  }
+  > p,
+  h2 {
+    padding: 0 5%;
   }
   .carousel {
     margin: 10px 0 30px;
+  }
+  .slick-dots {
+    transform: translateY(20px);
+    li {
+      button {
+        &:before {
+          font-size: 40px;
+          opacity: 0.66;
+          color: #013013;
+        }
+      }
+    }
+    .slick-active {
+      button {
+        &:before {
+          opacity: 1;
+        }
+      }
+    }
   }
 `;
 
@@ -22,26 +45,25 @@ const NextButton = styled.div`
   background: #fff;
   height: 40px;
   width: 40px;
-  transition:0.7s;
+  transition: 0.7s;
   border-radius: 50%;
   outline: 2px solid ${(props) => props.theme.color.green};
-  &:hover{
-    background:${(props) => props.theme.color.green};
-    border:1px solid #ffffff;
-    outline:2px solid ${(props) => props.theme.color.green};
-    svg{
-      color:#ffffff;
+  &:hover {
+    background: ${(props) => props.theme.color.green};
+    border: 1px solid #ffffff;
+    outline: 2px solid ${(props) => props.theme.color.green};
+    svg {
+      color: #ffffff;
     }
   }
-  &::before{
-    color:transparent;
+  &::before {
+    color: transparent;
   }
   svg {
     height: 20px;
     width: 20px;
     color: ${(props) => props.theme.color.green};
     transform: translate(-50%, 50%);
-   
   }
 `;
 
@@ -54,19 +76,19 @@ const PrevButton = styled.div`
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  transition:0.7s;
+  transition: 0.7s;
   border-radius: 50%;
   outline: 2px solid ${(props) => props.theme.color.green};
-  &:hover{
-    background:${(props) => props.theme.color.green};
-    border:1px solid #ffffff;
-    outline:2px solid ${(props) => props.theme.color.green};
-    svg{
-      color:#ffffff;
+  &:hover {
+    background: ${(props) => props.theme.color.green};
+    border: 1px solid #ffffff;
+    outline: 2px solid ${(props) => props.theme.color.green};
+    svg {
+      color: #ffffff;
     }
   }
-  &::before{
-    color:transparent;
+  &::before {
+    color: transparent;
   }
   svg {
     height: 20px;
@@ -78,7 +100,7 @@ const PrevButton = styled.div`
 
 function Testimonials() {
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 300,
     autoplay: true,
@@ -99,11 +121,11 @@ function Testimonials() {
     centerPadding: "260px",
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 992,
         settings: {
           arrows: false,
           centerMode: true,
-          centerPadding: "40px",
+          centerPadding: "100px",
           slidesToShow: 1,
         },
       },
@@ -128,13 +150,13 @@ function Testimonials() {
             img=""
             title="Fadziso Mashava"
             role="Product Designer"
-            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. A molestiae, excepturi porro accusamus eaque iure. Error voluptatum omnis quo minima!"
+            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. A molestiae, excepturi porro accusamus eaque iure. Error voluptatum omnis quo minima!, Lorem ipsum dolor sit amet consectetur adipisicing elit. A molestiae, excepturi porro accusamus eaque iure. Error voluptatum omnis quo minima!"
           />
           <Testimony
             img=""
             title="Anesu Ndoro"
             role="Web Developer"
-            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. A molestiae, excepturi porro accusamus eaque iure. Error voluptatum omnis quo minima!"
+            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. A molestiae, excepturi porro accusamus eaque iure. Error voluptatum omnis quo minima!, Lorem ipsum dolor sit amet consectetur adipisicing elit. A molestiae, excepturi porro accusamus eaque iure. Error voluptatum omnis quo minima!"
           />
           <Testimony
             img=""

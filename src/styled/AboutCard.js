@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import Paragraph from "./Paragraph";
 
 const CardWrapper = styled.div`
@@ -7,6 +7,10 @@ const CardWrapper = styled.div`
     border-radius:26px;
     height:auto;
     width:100%;
+    @media(min-width:768px){
+      width:47%;
+      margin-bottom:30px;
+    }
     h3{
         font-size:20px;
         font-family:${props => props.theme.fam.regular};

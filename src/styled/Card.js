@@ -13,7 +13,7 @@ const CardWrapper = styled.div`
   .img-left {
     height: 250px;
     width: 100%;
-    border-radius: 49px;
+    border-radius: 26px;
     overflow: hidden;
     background: linear-gradient(
         to bottom,
@@ -32,12 +32,13 @@ const CardWrapper = styled.div`
   .body {
     @media (min-width: 992px) {
       width: 50%;
-      margin: 0 10px;
+      margin: 0 0 0 30px;
     }
     h3 {
       font-family: ${(props) => props.theme.fam.bold};
       color: ${(props) => props.theme.color.purple};
       font-size: 20px;
+      line-height: 1.3;
     }
     p {
       font-family: ${(props) => props.theme.fam.regular};
@@ -46,7 +47,7 @@ const CardWrapper = styled.div`
       color: ${(props) => props.theme.color.green};
     }
     a {
-      font-family: ${(props) => props.theme.fam.regular};
+      font-family: ${(props) => props.theme.fam.semibold};
       color: ${(props) => props.theme.color.purple};
       text-decoration: none;
     }

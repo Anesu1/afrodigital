@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const TextWrapper = styled.p`
     color:${props => props.theme.color.purple};
-    font-family:${props => props.theme.fam.regular};
+    font-family:${props => props.theme.fam.bold};
     position:relative;
     font-size:15px;
     margin-left:120px;

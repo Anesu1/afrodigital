@@ -7,16 +7,16 @@ import { BsArrowRight } from "react-icons/bs";
 
 const ArticleWrapper = styled.section`
   margin: 5%;
-  padding-bottom:30px;
-  margin-bottom:0;
+  padding-bottom: 30px;
+  margin-bottom: 0;
   .article-inner {
     @media (min-width: 992px) {
-      display:flex;
-      justify-content:space-between
+      display: flex;
+      justify-content: space-between;
     }
   }
   .article-item {
-    border-radius: 49px;
+    border-radius: 26px;
     background: linear-gradient(
         to bottom,
         rgba(19, 19, 19, 0.5),
@@ -28,40 +28,52 @@ const ArticleWrapper = styled.section`
     margin-bottom: 30px;
     display: flex;
     justify-content: flex-end;
-    flex-direction:column;
-    font-family:${props => props.theme.fam.regular};
+    flex-direction: column;
+    font-family: ${(props) => props.theme.fam.regular};
     @media (min-width: 992px) {
-      height:auto;
-      width:66%;
+      height: auto;
+      width: 66%;
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
     }
     p {
       padding: 20px 20px 10px 20px;
-      color:#ffffff;
-      font-size:20px;
-      line-height:1.3;
-
+      color: #ffffff;
+      font-size: 20px;
+      line-height: 1.3;
+      font-family: ${(props) => props.theme.fam.regular};
+      @media (min-width: 992px) {
+        width: 390px;
+        font-size: 40px;
+      }
     }
-    a{
-        display: block;
-        padding:0 30px 30px 20px;
-        text-decoration:none;
-        color:#ffffff;
-        svg{
-            margin-left:10px;
-            position:relative;
-            top:50%;
-            transform:translateY(-50%);
+    a {
+      display: block;
+      padding: 0 30px 30px 20px;
+      text-decoration: none;
+      color: #ffffff;
+      font-family: ${(props) => props.theme.fam.regular};
+      svg {
+        margin-left: 10px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        @media (min-width: 768px) {
+          transform: unset;
+          top: unset;
         }
+      }
     }
   }
-  .article-right{
+  .article-right {
     @media (min-width: 768px) {
-      display:flex;
-      justify-content:space-between;
+      display: flex;
+      justify-content: space-between;
     }
     @media (min-width: 992px) {
       width: 32%;
-      flex-direction:column;
+      flex-direction: column;
     }
   }
 `;

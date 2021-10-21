@@ -13,6 +13,23 @@ const TestWrapper = styled.div`
     position:relative;
     padding-top:50px;
     text-align:center;
+    @media(min-width:768px){
+        max-width:500px;
+        height:250px;
+        padding-top:70px;
+    }
+    @media(min-width:992px){
+        max-width:600px;
+        height:200px;
+        p{
+            padding:0 5%;
+        }
+        
+    }
+    @media(min-width:1200px){
+        
+        padding:50px 5%;
+    }
     .img{
         position:absolute;
         left:50%;
@@ -22,12 +39,26 @@ const TestWrapper = styled.div`
         width:100px;
         border-radius:50%;
         background:grey;
-        
+        @media(min-width:768px){
+        top:-10%;
+    }
+    }
+    .title{
+        @media(min-width:768px){
+            display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin:30px auto 30px;
+        }
     }
     h4{
         font-family: ${props => props.theme.fam.bold};
         font-size:25px;
         margin-bottom:10px;
+        @media(min-width:768px){
+            margin-bottom:0;
+            margin-right:30px;
+        }
     }
     p{
         font-family: ${props => props.theme.fam.regular};

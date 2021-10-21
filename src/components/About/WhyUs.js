@@ -5,13 +5,37 @@ import Heading from "../../styled/Heading";
 
 const WhyUsWrapper = styled.section`
   padding: 5%;
+  .why-top{
+    @media(min-width:768px){
+      display:flex;
+      justify-content: space-between;
+      img{
+        margin-right:10%;
+        object-fit: contain;
+      }
+    }
+  }
   .why-bottom {
+    @media(min-width:768px){
+      display:flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
     div {
       background: ${(props) => props.theme.color.purple};
       &:first-child,
       &:nth-child(3),
       &:nth-child(5) {
-        background: ${(props) => props.theme.color.green};
+        @media(max-width:768px){
+          background: ${(props) => props.theme.color.green};
+        }
+      }
+      &:first-child,
+      &:nth-child(4),
+      &:nth-child(5) {
+        @media(min-width:768px){
+          background: ${(props) => props.theme.color.green};
+        }
       }
     }
   }

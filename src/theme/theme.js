@@ -1,7 +1,9 @@
+/* eslint-disable import/no-anonymous-default-export */
 export default {
     fam:{
         regular:"regular",
-        bold:"bold"
+        bold:"bold",
+        semibold: "semi-bold"
     },
     color:{
         purple:"#823E8E",

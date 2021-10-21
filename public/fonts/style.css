@@ -1,12 +1,16 @@
 @font-face {
     font-family: 'bold';
-    src: url('./bold.ttf');
+    src: url('./OpenSans-Bold.ttf');
     font-style: normal;
 }
 
 @font-face {
     font-family: 'regular';
-    src: url('./regular.ttf');
+    src: url('./OpenSans-Regular.ttf');
     font-style: normal;
 }
-
+@font-face{
+    font-family: 'semi-bold';
+    src: url('./OpenSans-Semibold.ttf');
+    font-style: normal;
+}

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { BiUser } from "react-icons/bi";
@@ -50,7 +51,7 @@ const HeaderWrapper = styled.header`
 
     flex-direction: column;
     @media (min-width: 768px) {
-      height: 660px;
+      height: 740px;
       box-shadow: 0px 3px 11px #0000003d;
     }
     @media (min-width: 992px) {
@@ -85,6 +86,7 @@ const HeaderWrapper = styled.header`
         display: block;
         padding: 20px;
         font-weight: bold;
+        font-family: ${props => props.theme.fam.semibold};
         color: ${(props) => props.theme.color.green};
         @media (min-width: 1200px) {
           margin: 0 20px;
@@ -151,6 +153,7 @@ const HeaderWrapper = styled.header`
     }
     span {
       display: none;
+      font-family: ${props => props.theme.fam.semibold};
       @media (min-width: 992px) {
         display: block;
         font-size: 10px;
@@ -172,7 +175,7 @@ function Header({ dark, open }) {
   return (
     <HeaderWrapper className={dark ? "dark" : "light"}>
       <Link to="/">
-        <img src="./img/logo.png" className="logo" alt="" />
+        <img src="/img/logo.png" className="logo" alt="" />
       </Link>
       <div className="hamburger" onClick={() => dispatch(setOpen(true))}>
         <CgMenu />
@@ -186,13 +189,18 @@ function Header({ dark, open }) {
           <Link to="/about">About Us</Link>
         </li>
         <li className="forDropdown">
-          <Link to="">
+          <a href="#">
             My Courses <FiChevronDown />
-          </Link>
+          </a>
           <ul className="dropDown">
             <li onClick={() => dispatch(setOpen(false))}>
               <Link to="/all-courses">
                 All Courses
+              </Link>
+            </li>
+            <li onClick={() => dispatch(setOpen(false))}>
+              <Link to="/my-courses">
+                My Courses
               </Link>
             </li>
             <li onClick={() => dispatch(setOpen(false))}>
@@ -209,7 +217,7 @@ function Header({ dark, open }) {
           <Link to="/contact">Contact Us</Link>
         </li>
       </ul>
-      <Link to="/" className="user">
+      <Link to="/profile" className="user">
         <BiUser />
         <span className={dark ? 'dark' : 'light'}>Profile</span>
       </Link>

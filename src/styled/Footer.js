@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import styled from 'styled-components';
 import { FaFacebook, FaLinkedinIn, FaInstagram, FaTwitter } from 'react-icons/fa';
@@ -63,16 +64,16 @@ function Footer() {
             <h5>Afrodigital Pan University</h5>
             <p className="follow">Follow us on Social</p>
             <div className="social-icons">
-                <a href="">
+                <a href="#">
                   <FaFacebook />  
                 </a>
-                <a href="">
+                <a href="#">
                    <FaLinkedinIn /> 
                 </a>
-                <a href="">
+                <a href="#">
                    <FaTwitter />  
                 </a>
-                <a href="">
+                <a href="#">
                     <FaInstagram /> 
                 </a>
              </div>

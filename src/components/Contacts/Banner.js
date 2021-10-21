@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const BannerWrapper = styled.section`
   margin: 0 3%;
-  padding-bottom: 90px;
+  padding-bottom:5%;
   position: relative;
   .banner-inner {
     height: 80vh;

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Slider from "react-slick";
 
 const BannerWrapper = styled.section`
   margin: 0 3%;
@@ -21,80 +20,81 @@ const BannerWrapper = styled.section`
       height: 660px;
       justify-content: flex-start;
       align-items: flex-start;
-
     }
-    @media(min-width:1200px){
-        height:75vh;
+    @media (min-width: 1200px) {
+      height: 75vh;
     }
     h1 {
       padding: 0 5%;
       font-size: 28px;
       margin-bottom: 0;
       color: #ffffff;
-      font-family: ${(props) => props.theme.fam.bold};
+      font-family: ${(props) => props.theme.fam.semibold};
       @media (min-width: 768px) {
-        font-size: 40px;
+        font-size: 50px;
         margin-top: 100px;
         line-height: 51px;
-        width:460px;
-
+        width: 550px;
       }
-
     }
     p {
       padding: 0 5%;
       color: #ffffff;
       font-size: 15px;
-      line-height:1.3;
+      line-height: 1.3;
       font-family: ${(props) => props.theme.fam.regular};
-        @media(min-width:768px){
-            width:325px;
-        }
+      @media (min-width: 768px) {
+        width: 325px;
+      }
     }
     .banner-bottom {
       display: none;
-      transition:0.7s;
+      transition: 0.7s;
       @media (min-width: 768px) {
         display: flex;
         position: absolute;
         bottom: 30px;
-        left:2%;
-        flex-wrap:wrap;
-        border-radius:26px;
-        border:1px solid;
-        padding:0 20px;
+        left: 2%;
+        flex-wrap: wrap;
+        border-radius: 26px;
+        border: 1px solid;
+        padding: 0 20px;
+        width: 77%;
       }
       @media (min-width: 992px) {
-        
-        left:5%;
+        width: 60%;
+        left: 5%;
       }
-      table{
-          width:100%;
+      table {
+        width: 100%;
       }
-      h4{
-          color:${props => props.theme.color.purple};
-          width:100%;
+      h4 {
+        color: ${(props) => props.theme.color.purple};
+        width: 100%;
+        font-family: ${(props) => props.theme.fam.bold};
       }
-      .up-course{
-          display: flex;
-          margin-bottom:20px;
-          td{
-              font-size:13px;
-          }
-         .num{
-             width:15%;
-         }
-          .title{
-            color:${props => props.theme.color.purple};
-            width:60%;
-          }
-          .period{
-              width:15%;
-          }
-          .time{
-            color:${props => props.theme.color.green};
-            width:20%;
-          }
+      .up-course {
+        display: flex;
+        margin-bottom: 20px;
+        font-family: ${(props) => props.theme.fam.semibold};
+        td {
+          font-size: 13px;
+        }
+        .num {
+          width: 15%;
+          font-family: ${(props) => props.theme.fam.bold};
+        }
+        .title {
+          color: ${(props) => props.theme.color.purple};
+          width: 60%;
+        }
+        .period {
+          width: 15%;
+        }
+        .time {
+          color: ${(props) => props.theme.color.green};
+          width: 20%;
+        }
       }
     }
   }
@@ -108,7 +108,6 @@ const BannerWrapper = styled.section`
       outline: 2px solid ${(props) => props.color};
       display: flex;
       padding: 0 5px;
-      border-radius: 26px !important;
       transition: 0.7s;
       align-items: center;
       span {
@@ -117,6 +116,7 @@ const BannerWrapper = styled.section`
         width: 25px;
         background: ${(props) => props.color};
         position: absolute;
+        font-family: ${(props) => props.theme.fam.semibold};
         border-radius: 50%;
         transition: 0.7s;
       }
@@ -141,24 +141,25 @@ function Banner({ dark, setDark, setLight }) {
           <h4>Upcoming courses</h4>
           <table>
             <tr className="up-course">
-            <td className="num">CDP101</td>
-            <td className="title">Certified Digital Selling Specialist Course</td>
-            <td className="period">10 weeks</td>
-            <td className="time">6 Octber 2021</td>
-          </tr>
-          <tr className="up-course">
-            <td className="num">PDDM01</td>
-            <td className="title">Pan Degree in Digital Marketing</td>
-            <td className="period">4 months</td>
-            <td className="time">6 October 2021</td>
-          </tr>  
+              <td className="num">CDP101</td>
+              <td className="title">
+                Certified Digital Selling Specialist Course
+              </td>
+              <td className="period">10 weeks</td>
+              <td className="time">6 Octber 2021</td>
+            </tr>
+            <tr className="up-course">
+              <td className="num">PDDM01</td>
+              <td className="title">Pan Degree in Digital Marketing</td>
+              <td className="period">4 months</td>
+              <td className="time">6 October 2021</td>
+            </tr>
           </table>
-          
         </div>
       </div>
       <div className="switch">
         <div
-          id="switch-border"
+          style={{ borderRadius: 26 + "px" }}
           className="button"
           onClick={dark ? setLight : setDark}
         >

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const ArticleWrapper = styled.div`
-  border-radius: 49px;
+  border-radius: 26px;
   background: linear-gradient(
       to bottom,
       rgba(19, 19, 19, 0.5),
@@ -25,7 +25,7 @@ const ArticleWrapper = styled.div`
     padding: 20px;
     color: #ffffff;
     line-height: 1.3;
-    font-family: ${(props) => props.theme.fam.regular};
+    font-family: ${(props) => props.theme.fam.semibold};
   }
 `;
 

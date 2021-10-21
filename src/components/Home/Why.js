@@ -9,52 +9,102 @@ import TextLined from "../../styled/TextLined";
 
 const WhyWrapper = styled.section`
   padding: 5%;
+  @media (min-width: 992px) {
+    display: flex;
+    justify-content: space-between;
+  }
   .why-inner {
     margin-bottom: 30px;
+    @media (min-width: 992px) {
+      width: 35%;
+    }
     button {
       margin-bottom: 30px;
     }
   }
   .why-bottom {
+    margin-bottom: 100px;
+    @media (min-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+    }
+    @media (min-width: 992px) {
+      margin-bottom: 0;
+      justify-content: flex-start;
+    }
     .logo {
       height: 100px;
       width: 210px;
       background: linear-gradient(
-        to bottom,
-        rgba(19, 19, 19, 0.5),
-        rgba(41, 41, 41, 0.5)
-      ),
-      url(${(props) => props.img});
+          to bottom,
+          rgba(19, 19, 19, 0.5),
+          rgba(41, 41, 41, 0.5)
+        ),
+        url(${(props) => props.img});
       margin-bottom: 20px;
+      @media (min-width: 992px) {
+        width: 150px;
+        height: 70px;
+        margin-right: 20px;
+      }
     }
   }
   .item {
+    @media (min-width: 768px) {
+      position: relative;
+    }
     .img {
       height: 300px;
       width: 100%;
       max-width: 500px;
       border-radius: 26px;
       background: linear-gradient(
-        to bottom,
-        rgba(19, 19, 19, 0.5),
-        rgba(41, 41, 41, 0.5)
-      ),
-      url(${(props) => props.imageitem});
+          to bottom,
+          rgba(19, 19, 19, 0.5),
+          rgba(41, 41, 41, 0.5)
+        ),
+        url(${(props) => props.imageitem});
       display: flex;
       align-items: flex-end;
+      @media (min-width: 768px) {
+        height: 500px;
+        max-width: 410px;
+      }
+
       p {
         padding: 18px;
-        line-height:1.5;
+        line-height: 1.5;
+        color: #ffffff;
         font-size: 25px;
-        font-family: ${(props) => props.theme.fam.regular};
+        font-family: ${(props) => props.theme.fam.bold};
+        @media (min-width: 768px) {
+          font-size: 15px;
+        }
       }
+    }
+    .text {
+      @media (min-width: 768px) {
+        position: absolute;
+        background: ${(props) => props.theme.color.green};
+        color: #ffffff;
+        top: 50%;
+        border-radius: 26px;
+        right: 0;
+        width: 60%;
+        padding: 3%;
+      }
+    }
+  }
+  .why-courses {
+    @media (min-width: 992px) {
+      width: 60%;
     }
   }
 `;
 
 const NextButton = styled.div`
   cursor: pointer;
-  right: 50px;
+  right: 1%;
   top: -50px;
   background: #fff;
   height: 40px;
@@ -62,6 +112,11 @@ const NextButton = styled.div`
   transition: 0.7s;
   border-radius: 50%;
   outline: 2px solid ${(props) => props.theme.color.green};
+  @media (min-width: 768px) {
+    top: unset;
+    bottom: -10%;
+  }
+
   &:hover {
     background: ${(props) => props.theme.color.green};
     border: 1px solid #ffffff;
@@ -84,7 +139,8 @@ const NextButton = styled.div`
 const PrevButton = styled.div`
   cursor: pointer;
   left: unset;
-  right: 120px;
+  top: -50px;
+  right: 30%;
   background: #fff;
   height: 40px;
   width: 40px;
@@ -92,6 +148,14 @@ const PrevButton = styled.div`
   transition: 0.7s;
   border-radius: 50%;
   outline: 2px solid ${(props) => props.theme.color.green};
+  @media (min-width: 768px) {
+    right: 10%;
+    top: unset;
+    bottom: -10%;
+  }
+  @media (min-width: 1200px) {
+    right: 15%;
+  }
   &:hover {
     background: ${(props) => props.theme.color.green};
     border: 1px solid #ffffff;
@@ -132,14 +196,6 @@ function Why() {
         <BsChevronRight />
       </NextButton>
     ),
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          arrows: false,
-        },
-      },
-    ],
   };
   return (
     <WhyWrapper>
