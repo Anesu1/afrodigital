@@ -1,5 +1,8 @@
+/* eslint-disable jsx-a11y/heading-has-content */
 import React from "react";
 import styled from "styled-components";
+import {useQuery, gql} from '@apollo/client'
+import { Typography } from "@material-ui/core";
 
 const BannerWrapper = styled.section`
   margin: 0 3%;
@@ -110,6 +113,7 @@ const BannerWrapper = styled.section`
       padding: 0 5px;
       transition: 0.7s;
       align-items: center;
+      border-radius:26px 26px 26px 26px !important;
       span {
         height: 25px;
         transform: ${(props) => props.translate};
@@ -124,42 +128,64 @@ const BannerWrapper = styled.section`
   }
 `;
 
+export const AFRO_CONTENT = gql`
+  query MyQuery {
+    page(id: "cG9zdDo2") {
+      content
+    }
+  }
+
+
+`
+
+
+
 function Banner({ dark, setDark, setLight }) {
+  const { loading, error, data } = useQuery(AFRO_CONTENT);
+
+  //the website was built with wp bakery age builder 
+  
+
+  if (loading) return <img src="./img/loading.gif" alt="" />;
+  if (error) return <p>Error :(</p>;
   return (
     <BannerWrapper
-      image="./img/bg.jpg"
+      image
       translate={dark ? "translateX(0)" : "translateX(36px)"}
       color={dark ? "#fff" : "#0B8138"}
     >
       <div className="banner-inner">
-        <h1>Best Online Education in Africa</h1>
+        <h1>{}</h1>
+        <Typography
+                    variant="body2"
+                    component="p"
+                    dangerouslySetInnerHTML={{__html: data.page.content}} />
         <p>
-          Become the smartest marketer in the room by taking our CPD UK
-          Accredited Digital marketing course.
+        {}
         </p>
         <div className="banner-bottom">
-          <h4>Upcoming courses</h4>
+          <h4>{}</h4>
           <table>
             <tr className="up-course">
-              <td className="num">CDP101</td>
+              <td className="num">{}</td>
               <td className="title">
-                Certified Digital Selling Specialist Course
+                {}
               </td>
-              <td className="period">10 weeks</td>
-              <td className="time">6 Octber 2021</td>
+              <td className="period">{}</td>
+              <td className="time">{}</td>
             </tr>
             <tr className="up-course">
-              <td className="num">PDDM01</td>
-              <td className="title">Pan Degree in Digital Marketing</td>
-              <td className="period">4 months</td>
-              <td className="time">6 October 2021</td>
+              <td className="num">{}</td>
+              <td className="title">{}</td>
+              <td className="period">{}</td>
+              <td className="time">{}</td>
             </tr>
           </table>
         </div>
       </div>
       <div className="switch">
         <div
-          style={{ borderRadius: 26 + "px" }}
+          style={{ borderRadius: 26  }}
           className="button"
           onClick={dark ? setLight : setDark}
         >

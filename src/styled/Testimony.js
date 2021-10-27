@@ -33,7 +33,7 @@ const TestWrapper = styled.div`
     .img{
         position:absolute;
         left:50%;
-        top:-20%;
+        top:-13%;
         transform:translateX(-50%);
         height:100px;
         width:100px;

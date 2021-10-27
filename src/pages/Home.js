@@ -5,7 +5,8 @@ import Courses from '../components/Home/Courses'
 import Why from '../components/Home/Why'
 import {setDark} from '../redux/darkSlice'
 import Testimonials from '../components/Home/Testimonials'
-import Articles from '../components/Home/Articles'
+import Articles from '../components/Home/Articles';
+
 
 
 // Pull dark state from global redux state (state param) and pass as property
@@ -16,6 +17,7 @@ const mapStateToProps = state => ({
 // Our redux state is designed to store dark decision
 // looks like this
 // {theme: {dark: false}, as we dispatch actions, it will update this state in a reducer
+
 
 
 function Home({dark}) {
